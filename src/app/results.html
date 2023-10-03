@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmentation Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">DeepSkin</a>
+      <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link active" href="/about">About</a>
+      </div>
+  </nav>
+    <div class="content-wrapper">
+    <div class="container mt-5">
+        <h1 class="text-center">Segmentation Results</h1>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h5>Uploaded Image:</h5>
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_img) }}" class="img-fluid mx-auto d-block pt-3 pb-3" alt="Uploaded Image" style="width: 80%; height: auto;">
+            </div>
+            <div class="col-md-6">
+                <h5>Segmentation Mask:</h5>
+                <img src="{{ url_for('static', filename='results/' + mask_img) }}" class="img-fluid mx-auto d-block pt-3 pb-3" alt="Segmentation Mask" style="width: 80%; height: auto;">
+            </div>
+        </div>
+        <div class="card mb-4 shadow">
+            <div class="card-header text-center">Segmentation Analysis</div>
+            <div class="card-body">
+                <h4 class="text-center mb-4">Segmentation covers {{ segmentation_percentage }}% of the image.</h4>
+                <p class="text-center">
+                        {{ interpretation }}
+                </p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <a href="/" class="btn btn-primary">Go Back</a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <footer class="footer bg-dark text-white text-center">
+      <div class="container">
+          <span>Email: </span><a href="mailto:pathakaman985@gmail.com" class="footer-link">pathakaman985@gmail.com</a>
+          <span>|</span>
+          <span>LinkedIn: </span><a href="https://www.linkedin.com/in/pathakaman" target="_blank" class="footer-link">Aman Pathak</a>
+          <span>|</span>
+          <span>GitHub: </span><a href="https://github.com/Nobitahyper" target="_blank" class="footer-link">Nobitahyper</a>
+      </div>
+  </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

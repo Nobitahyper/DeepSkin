@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Cancer Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class = "bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">DeepSkin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+    <div class="container mt-4">
+        <h2>Advanced Skin Lesion Segmentation with Deep Learning</h2>
+
+        <!-- Disclaimer -->
+      <div class="alert alert-warning" role="alert">
+          Disclaimer: This tool is for educational purposes only. Please consult with a healthcare professional for a definitive diagnosis.
+      </div>
+
+      <!-- Background Information -->
+      <p>
+          Skin cancer is one of the most common cancers globally. Early detection can play a pivotal role in successful treatment. This automated tool harnesses state-of-the-art deep learning models to perform skin lesion segmentation, aiding in the early detection of potential skin cancer regions. Early identification and treatment can significantly enhance positive outcomes.
+      </p>
+
+      <p>
+          <strong>How to use:</strong><br>
+          1. Upload a clear skin image.<br>
+          2. Choose the desired model for analysis.<br>
+          3. Click on 'Predict' to get the results.
+      </p>
+
+        <p>Upload a skin image to detect potential cancerous regions.</p>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="file" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="model_choice">Choose a model:</label>
+                <!-- Model Descriptions -->
+                <p><strong>U-Net:</strong> A model tailored for biomedical image segmentation.</p>
+                <p><strong>EfficientNet:</strong> An advanced model known for its efficiency and accuracy in image tasks.</p>
+
+                <select name="model_choice" id="model_choice" class="form-control">
+                    <option value="unet">U-Net</option>
+                    <option value="efficientnet">EfficientNet</option>
+                </select>
+            </div>
+            <input type="submit" value="Predict" class="btn btn-primary">
+        </form>
+
+        {% if original and segmented %}
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h4>Original Image</h4>
+                <img src="{{ original }}" class="img-fluid" alt="Original Image">
+            </div>
+            <div class="col-md-6">
+                <h4>Segmented Image</h4>
+                <img src="{{ segmented }}" class="img-fluid" alt="Segmented Image">
+            </div>
+        </div>
+        {% endif %}
+    </div>
+  </div>
+
+  <footer class="footer bg-dark text-white text-center">
+      <div class="container">
+          <span>Email: </span><a href="mailto:pathakaman985@gmail.com" class="footer-link">pathakaman985@gmail.com</a>
+          <span>|</span>
+          <span>LinkedIn: </span><a href="https://www.linkedin.com/in/pathakaman" target="_blank" class="footer-link">Aman Pathak</a>
+          <span>|</span>
+          <span>GitHub: </span><a href="https://github.com/Nobitahyper" target="_blank" class="footer-link">Nobitahyper</a>
+      </div>
+  </footer>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

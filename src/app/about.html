@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">DeepSkin</a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link active" href="/about">About</a>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+      <div class="container mt-5">
+          <h2 class="text-center">Advanced Skin Lesion Segmentation with Deep Learning</h2>
+          <hr>
+          <div class="alert alert-warning" role="alert">
+              Disclaimer: While the models are trained to be as accurate as possible, always consult with a dermatologist for a conclusive diagnosis.
+          </div>
+
+          <h4>Introduction</h4>
+          <p>
+              This project aims to predict skin cancer by analyzing skin lesion images. Using deep learning models, the goal is to perform image segmentation tasks to identify potential regions of concern in the provided images.
+          </p>
+
+          <h4>Dataset Description</h4>
+          <p>
+              The data used in this project comes from the <a href="https://challenge.isic-archive.com/data/" target="_blank">International Skin Imaging Collaboration (ISIC) 2016 challenge</a>. This dataset contains high-quality dermoscopic images, which are standard in dermatology for detecting skin cancer. Each image in the dataset has a corresponding segmentation mask that highlights regions of interest.
+          </p>
+
+          <h4>Model Architectures</h4>
+          <p>
+              Two deep learning models were developed for the task:
+          </p>
+
+          <h5>U-Net Model</h5>
+          <p>
+              The U-Net architecture is renowned for its effectiveness in biomedical image segmentation. This model comprises a series of convolutional, max pooling, and transposed convolutional layers, capturing the spatial hierarchies in the images.
+          </p>
+
+          <h5>EfficientNet Model</h5>
+          <p>
+              The EfficientNetB7 model was employed and fine-tuned for this dataset. EfficientNet scales the width, depth, and resolution of the network, leading to better performance.
+          </p>
+
+          <h4>Model Training and Evaluation</h4>
+
+          <h5>Data Augmentation</h5>
+          <p>
+              To increase the robustness of the models, data augmentation techniques such as rotations, zooming, and horizontal flipping were applied to the training dataset.
+          </p>
+
+          <h5>Training Procedure</h5>
+          <p>
+              Both models were trained using the Adam optimizer and binary cross-entropy loss function. Early stopping and model checkpointing were incorporated to monitor the validation loss and save the best model weights.
+          </p>
+
+          <h5>Evaluation Metrics</h5>
+          <p>
+              The models were evaluated using Intersection over Union (IoU) and Dice Coefficient, providing insights into the quality of the segmentation.
+          </p>
+
+          <h4>How to Use</h4>
+          <p>
+              Users can upload an image of a skin lesion, and the application will process it through both models. The segmented output will indicate areas that might be of concern.
+          </p>
+
+          <h4>Results and Discussion</h4>
+          <p>
+              The U-Net model achieved an accuracy of approximately 90% with an IoU of 0.5725 and a Dice Coefficient of 0.6818. The EfficientNet model achieved an accuracy of around 97% with an IoU of 0.6135 and a Dice Coefficient of 0.7306. These results demonstrate the benefits of employing advanced architectures and fine-tuning them on specific datasets.
+          </p>
+      </div>
+  </div>
+
+
+
+  <footer class="footer bg-dark text-white text-center">
+      <div class="container">
+          <span>Email: </span><a href="mailto:pathakaman985@gmail.com" class="footer-link">pathakaman985@gmail.com</a>
+          <span>|</span>
+          <span>LinkedIn: </span><a href="https://www.linkedin.com/in/pathakaman" target="_blank" class="footer-link">Aman Pathak</a>
+          <span>|</span>
+          <span>GitHub: </span><a href="https://github.com/Nobitahyper" target="_blank" class="footer-link">Nobitahyper</a>
+      </div>
+  </footer>
+
+
+</body>
+</html>
